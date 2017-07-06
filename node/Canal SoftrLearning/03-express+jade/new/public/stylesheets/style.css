@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#container{
+    float: left;
+    color: #ffffff;
+}
+
+#container2{
+    background: url("../images/nodejs.jpeg") no-repeat;
+    min-height:300px ;
+}

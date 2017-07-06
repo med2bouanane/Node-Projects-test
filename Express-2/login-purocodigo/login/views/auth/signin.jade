@@ -1,0 +1,32 @@
+extends ../templates/layout
+
+block content
+  div(class="row")
+    div(class="col-xs-6 col-xs-offset-3")
+
+      if message.length > 0
+        div(class='alert alert-success' role='alert')=message
+      if auth_message.length > 0
+        div(class='alert alert-danger' role='alert')=auth_message
+      
+      div(class="panel panel-info")
+        div(class="panel-heading")="Iniciar Sesión"
+        div(class="panel-body")
+          form(action='/auth/signin' method='post')
+            div(class='form-group')
+              label(for="email")='Email'
+              div(class="input-group")
+                span(class="input-group-addon")
+                  i(class="glyphicon glyphicon-envelope text-primary")
+                // name debe ser siempre 'username' para que lo reconozca passport    
+                input(type='email' name='username' id='email' placeholder='Email' class='form-control')
+            div(class='form-group')
+              label(for="password")='Password'
+              div(class="input-group")
+                span(class="input-group-addon")
+                  i(class="glyphicon glyphicon-lock text-primary")
+                input(type='password' name='password' id='password' placeholder="Password" class="form-control")
+
+            div(class="row")
+              div(class="col-xs-6 col-xs-offset-3")
+                button(type="submit" class="btn btn-lg btn-block btn-success")='Iniciar Sesión'      

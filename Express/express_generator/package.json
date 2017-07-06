@@ -1,0 +1,16 @@
+{
+  "name": "express_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohamed Bouanane",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-generator": "^4.15.0",
+    "nodemon": "^1.11.0"
+  }
+}

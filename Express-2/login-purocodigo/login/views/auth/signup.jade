@@ -1,0 +1,31 @@
+extends ../templates/layout
+
+block content
+  div(class="row")
+    div(class="col-xs-6 col-xs-offset-3")
+      div(class="panel panel-info")
+        div(class="panel-heading")="Registrarse"
+        div(class="panel-body")
+          form(action='/auth/signup' method='post')
+            div(class='form-group')
+              label(for="email")='Email'
+              div(class="input-group")
+                span(class="input-group-addon")
+                  i(class="glyphicon glyphicon-envelope text-primary")
+                input(type='email' name='email' id='email' placeholder='Email' class='form-control')
+            div(class='form-group')
+              label(for="nombre")='Nombre'
+              div(class="input-group")
+                span(class="input-group-addon")
+                  i(class="glyphicon glyphicon-user text-primary")
+                input(type='text' name='nombre' id='nombre' placeholder="Nombre" class="form-control")
+            div(class='form-group')
+              label(for="password")='Password'
+              div(class="input-group")
+                span(class="input-group-addon")
+                  i(class="glyphicon glyphicon-lock text-primary")
+                input(type='password' name='password' id='password' placeholder="Password" class="form-control")
+
+            div(class="row")
+              div(class="col-xs-6 col-xs-offset-3")
+                button(type="submit" class="btn btn-lg btn-block btn-success")='Registrarse'      

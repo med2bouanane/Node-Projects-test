@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  form(method='post')
+      label Nombre
+      input(type='text',name='name')
+      label email
+      input(type='text',name='email')
+      input(type='submit',value='Suscribir')

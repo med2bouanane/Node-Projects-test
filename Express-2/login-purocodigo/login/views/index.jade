@@ -1,0 +1,9 @@
+extends templates/layout
+
+block content
+
+  div(class="container")
+    h1= "Sistema de Login y Registro con Node JS"
+    if auth_message.length > 0
+      div(class='alert alert-success' role='alert')=auth_message
+
