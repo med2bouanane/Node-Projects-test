@@ -8,12 +8,17 @@ var bodyParser = require('body-parser');
 
 var products = require('./routes/products');
 var user = require('./routes/user');
+var authMiddleware = require('./middlewares/auth');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+//***************
+// MIDDLEWARES :
+//***************
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -25,13 +30,23 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API
-app.use('/api/product', products);
+//***************
+//  API :
+//***************
 app.use('/api/user', user);
-
-// VIEW
-app.use('/product', products);
 app.use('/user', user);
+
+// A PARTIR DE ESTE MIDDLEWAR TODAS LAS PETICIONES VAN A NECESITAR AUTENTICACION 
+app.use('/',authMiddleware.isAuth);
+
+app.use('/api/product', products);
+//app.use('/api/user', user);
+
+//***************
+// VIEWS :
+//***************
+app.use('/product', products);
+//app.use('/user', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

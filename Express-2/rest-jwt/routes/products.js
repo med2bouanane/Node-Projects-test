@@ -6,7 +6,8 @@ const express = require('express'),
 	authMiddleware = require('../middlewares/auth')
 
 // GET: product
-router.get('/', authMiddleware.isAuth, productController.getProducts)
+//router.get('/', authMiddleware.isAuth, productController.getProducts)
+router.get('/', productController.getProducts)
 
 //GET: by Id Product
 //router.get('/:productId', productController.getProductById)
