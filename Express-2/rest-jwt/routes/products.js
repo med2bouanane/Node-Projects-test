@@ -7,6 +7,22 @@ const express = require('express'),
 
 // GET: product
 //router.get('/', authMiddleware.isAuth, productController.getProducts)
+//schema:
+// $ref: '#/definitions/Product'
+/**
+ * @swagger
+ * /api/product:
+ *   get:
+ *     tags:
+ *       - Products
+ *     description: Returns all products
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: An array of products
+ *         
+ */
 router.get('/', productController.getProducts)
 
 //GET: by Id Product

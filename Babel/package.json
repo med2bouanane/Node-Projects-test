@@ -1,10 +1,11 @@
 {
-  "name": "Babel",
+  "name": "babel_test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d dist",
+    "start":"npm run build && node dist/js/main.js"
   },
   "keywords": [],
   "author": "",
