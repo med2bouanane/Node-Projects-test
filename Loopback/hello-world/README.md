@@ -42,7 +42,7 @@ editar model-config.json
 
  $ lb relation
  una category tiene muchos productos
- > ** product.json **
+ > **product.json**
 "relations": {
     "category": {
       "type": "belongsTo",
@@ -50,7 +50,7 @@ editar model-config.json
       "foreignKey": "categoryId"
     }
 
- > ** category.json **
+ > **category.json**
  "relations": {
     "products": {
       "type": "hasMany",
