@@ -18,9 +18,17 @@ module.exports = function(Test) {
     cb(null, response);
     };
 
-    // Esto se muestra en SWAGGER
+  // Esto se muestra en SWAGGER
+  // model.remoteMethod(requestHandlerFunctionName, [options])
+      // model = Test
+      // requestHandlerFunctionName = status => (Test.status)
+      // options = object con los parámetros de configuración de REST
+  // http://localhost:3000/api/tests/status    
   Test.remoteMethod(
-    'status', {
+    
+    'status', 
+    
+    {
       http: {
         path: '/status',
         verb: 'get'

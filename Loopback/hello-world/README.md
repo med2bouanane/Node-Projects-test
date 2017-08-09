@@ -25,7 +25,7 @@ common/models/category.js
 ### PASO 3
 editar model-config.json
 
-> ** CODE ** 
+> **CODE** 
 "category": {
       "dataSource": "db",
       "public": true
@@ -34,9 +34,11 @@ editar model-config.json
 # API
 
 ### FORMA 1
- models/test.js
+ models/test.js ==> se muestra en SWAGGER
 ### FORMA 2
- boot/routes
+ boot/routes ==> NO se muestra en SWAGGER
+### FORMA 3
+ server/server.js ==> Tipo express ==> NO se muestra en SWAGGER
 
  # RELACIONES
 

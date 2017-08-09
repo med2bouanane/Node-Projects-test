@@ -1,0 +1,35 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "signupDate": {
+      "type": "date"
+    },
+    "lastDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["password"]
+}

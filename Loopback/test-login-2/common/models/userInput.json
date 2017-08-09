@@ -1,0 +1,24 @@
+{
+  "name": "userInput",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "displayName": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "signupDate": {
+      "type": "date"
+    },
+    "lastDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

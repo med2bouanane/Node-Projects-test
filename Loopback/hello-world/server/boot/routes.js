@@ -3,15 +3,21 @@
 // No se muestra en SWAGGER
 module.exports = function(app) {
   // FORMA 1
-  // app.get('/ping', function(req, res) {
-  //   res.send('pong');
-  // });
+  app.get('/api/ping', function(req, res) {
+    res.send('pong');
+  });
 
   // FORMA 2
   var router = app.loopback.Router();
-  router.get('/ping', function(req, res) {
+  router.get('/api/ping2', function(req, res) {
     res.send('pongaroo');
   });
+
+  // FORMA 3
+  app.use('/express-status', function(req, res, next) {
+    res.json({ running: true });
+  });
+
   app.use(router);
 
 }

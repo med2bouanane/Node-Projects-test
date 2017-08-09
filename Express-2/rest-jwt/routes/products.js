@@ -20,7 +20,7 @@ const express = require('express'),
  *       - application/json
  *     responses:
  *       200:
- *         description: An array of products
+ *         description: A list of products
  *         
  */
 router.get('/', productController.getProducts)
