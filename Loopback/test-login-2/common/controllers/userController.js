@@ -11,15 +11,17 @@ let userConroller = class userConroller{
         let response,msg;
         let salt = bcrypt.genSaltSync(10)
         let passwordCrypted = bcrypt.hashSync(values.password,salt)
-        console.log(`passwordCrypted. ${passwordCrypted} `)
-        let date = new Date()
+        let date = (new Date()).toString()
+
         let data = { 
             email: values.email, 
             password: passwordCrypted,
             displayName: values.displayName,
-            avatar: values.avatar
+            avatar: values.avatar,
+            signupDate: date,
+            lastDate: date
          }
-         console.log(`data. ${data} `)
+
         let promise = new Promise((resolve,reject)=>{
                 user.create(data,(err,user) => {
                 if(err){
@@ -38,6 +40,7 @@ let userConroller = class userConroller{
         return promise
     }
 
+    
     static signIn(credentials,user){
         let promise = new Promise((resolve,reject)=>{
             let response
