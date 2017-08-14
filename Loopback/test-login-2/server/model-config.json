@@ -1,9 +1,10 @@
 {
   "_meta": {
     "sources": [
-      "loopback/common/models",
-      "loopback/server/models",
-      "../common/models",
+      "../common/app",
+      "../common/app/models",
+      "../common/app/user/model",
+      "../common/app/product/model",
       "./models"
     ],
     "mixins": [
@@ -17,8 +18,12 @@
     "dataSource": "shop",
     "public": true
   },
-  "userInput": { 
+  "userInput": {
     "dataSource": false,
     "public": false
+  },
+  "product": {
+    "dataSource": "shop",
+    "public": true
   }
 }

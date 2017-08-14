@@ -1,11 +1,22 @@
 
-const userService = require('../services/userService'),
+const userService = require('../service/userService'),
         bcrypt = require('bcryptjs');
 
+/**
+ * The Business / Manager's Layer 
+ * Process Business Logic 
+ **/
 let userConroller = class userConroller{
 
+    /** 
+     * constructor
+     */
     constructor(){}
-
+    
+    /**
+     * @param  { object } values
+     * @param  { User } user
+     */
     static signUp(values,user){
 
         let response,msg;
@@ -41,6 +52,10 @@ let userConroller = class userConroller{
     }
 
     
+    /**
+     * @param  { object } credentials
+     * @param  { User } user
+     */
     static signIn(credentials,user){
         let promise = new Promise((resolve,reject)=>{
             let response

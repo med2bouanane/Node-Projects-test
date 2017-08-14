@@ -1,9 +1,9 @@
 
 const moment = require('moment'),
         jwt = require('jsonwebtoken'),
-        config = require('../../config');
+        config = require('../../../../config');
 
-
+/** third-party's layer  */
 
 let userService = class userService{        
 
@@ -16,6 +16,11 @@ let userService = class userService{
         }
 
         return jwt.sign(payload, config.SECRET_TOKEN) // Codificar (Crear) el token con la clave secreta
+    }
+
+    static decodeToken(token){
+
+        
     }
 }
 
