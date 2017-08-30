@@ -1,0 +1,9 @@
+{
+  "periodicSoapDS": {
+    "url": "http://www.webservicex.net/periodictable.asmx",
+    "name": "periodicSoapDS",
+    "wsdl": "http://www.webservicex.net/periodictable.asmx?WSDL",
+    "remotingEnabled": true,
+    "connector": "soap"
+  }
+}

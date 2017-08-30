@@ -1,6 +1,7 @@
 
 const userController = require('../controller/userController')
 
+
 let signIn = {
     /**
      * @param  { object } credentials
@@ -13,14 +14,19 @@ let signIn = {
     
     remoteMethod:{
         accepts: [
-            {arg: 'credentials' , type: 'object',required: true, http: {source: 'body'} }
+            {
+                arg: 'credentials' , 
+                type: '{"email":"string","password":"string"}',
+                required: true, 
+                http: {source: 'body'} 
+            }
             ],
         http: {
             path: '/signin',
             verb: 'post'
         },
         returns: [
-            {arg: 'data',type: 'object', root: true}
+            {arg: 'credentials',type: '{"email":"string","password":"string"}', root: true}
             ]
         } 
 }

@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "soap_LocproPortType": {
+    "dataSource": null,
+    "public": true
+  },
+  "WS_WCLIENT_RECH_2": {
+    "dataSource": null,
+    "public": true
+  },
+  "WS_WCLIENT_RECH_2Response": {
+    "dataSource": null,
+    "public": true
+  },
+  "WS_WCLIENT_RECH_2Result": {
+    "dataSource": null,
+    "public": true
+  },
+  "CritereClient": {
+    "dataSource": null,
+    "public": true
+  },
+   "ArrayOfClient": {
+    "dataSource": null,
+    "public": true
+  },
+  "Client": {
+    "dataSource": null,
+    "public": true
+  },
+  "FicheClient": {
+    "dataSource": null,
+    "public": true
+  },
+  "AdresseClient": {
+    "dataSource": null,
+    "public": true
+  },
+  "InfoChantier": {
+    "dataSource": null,
+    "public": true
+  },
+  "CommunicationsClient": {
+    "dataSource": null,
+    "public": true
+  }
+  
+  
+}

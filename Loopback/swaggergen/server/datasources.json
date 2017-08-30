@@ -1,0 +1,18 @@
+{
+    "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+
+    "SwaggerDS": {
+        "name": "SwaggerDS",
+        "connector": "swagger",
+        "spec": "http://petstore.swagger.io/v2/swagger.json",
+        "security": {
+            "type": "apiKey",
+            "name": "api_key",
+            "key": "yourAPIKey",
+            "in": "header"
+        }
+}
+}

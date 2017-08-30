@@ -1,0 +1,38 @@
+{
+  "name": "AdresseClient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "IdentificationOrganisation": {
+      "type": "string"
+    },
+    "ComplementNom": {
+      "type": "string"
+    },
+    "ComplementAdresse": {
+      "type": "string"
+    },
+    "Numero_et_rue": {
+      "type": "string"
+    },
+    "MentionSpeciale": {
+      "type": "string"
+    },
+    "Codepostal": {
+      "type": "string"
+    },
+    "Localite": {
+      "type": "string"
+    },
+    "Pays": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

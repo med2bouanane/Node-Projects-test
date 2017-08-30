@@ -1,0 +1,16 @@
+{
+  "WS_WCLIENT_RECH_2": {
+    "url": "http://frintkil11/locprobin/locpro.dll",
+    "name": "WS_WCLIENT_RECH_2",
+    "wsdl": "http://frintkil11/locprobin/locpro.dll/wsdl?service=WS_WCLIENT_RECH_2",
+    "remotingEnabled": true,
+    "connector": "soap"
+  },
+  "WS_WCLIENT_RECH_2_2": {
+    "url": "http://frintkil11/locprobin/locpro.dll",
+    "name": "WS_WCLIENT_RECH_2_2",
+    "wsdl": "http://frintkil11/locprobin/locpro.dll/wsdl?service=WS_WCLIENT_RECH_2",
+    "remotingEnabled": true,
+    "connector": "soap"
+  }
+}

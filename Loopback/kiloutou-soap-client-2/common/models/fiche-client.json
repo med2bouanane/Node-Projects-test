@@ -1,0 +1,57 @@
+{
+  "name": "FicheClient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "LastModif": {
+      "type": "string"
+    },
+    "RaisonSociale": {
+      "type": "string"
+    },
+    "IsActif": {
+      "type": "string"
+    },
+    "NumeroTVAIntracommunautaire": {
+      "type": "string"
+    },
+    "Siret": {
+      "type": "string"
+    },
+    "CodeClient": {
+      "type": "string"
+    },
+    "TypeClient": {
+      "type": "string"
+    },
+    "StatutEconomique": {
+      "type": "string"
+    },
+    "Extranet": {
+      "type": "string"
+    },
+    "UnikCall": {
+      "type": "string"
+    },
+    "CodeClientSiren": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "infoChantier": {
+      "type": "embedsOne",
+      "model": "InfoChantier",
+      "property": "infoChantier",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

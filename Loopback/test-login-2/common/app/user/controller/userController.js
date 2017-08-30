@@ -42,6 +42,7 @@ let userConroller = class userConroller{
 
                 let token = userService.createToken(user);
                 user.token = token;
+                user.status = 200;
                 msg = {"msg":"access OK."}; 
                 response = user;
                 console.log(`user: ${user.email} has been correctly created.`);
@@ -65,7 +66,7 @@ let userConroller = class userConroller{
                     resolve({"status":404,"message":"user not found."})
                 }
                 else if(!bcrypt.compareSync(credentials.password,user.password))
-                    resolve({"status":500,"message":"Error passwore "})
+                    resolve({"status":401,"message":"User name or Password are wrong "})
                 else if(err)
                     resolve({"status":500,"message":err})
                 else{
@@ -74,6 +75,7 @@ let userConroller = class userConroller{
                     //let res = {"token":token , "message":"access OK."}
                     user.token = token
                     user.message = msg
+                    user.status = 200
                     response = user
                     resolve(response)
                 }

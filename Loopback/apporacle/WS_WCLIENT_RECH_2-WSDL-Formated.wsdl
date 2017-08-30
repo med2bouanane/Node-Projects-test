@@ -1,0 +1,290 @@
+<wsdl:definitions targetNamespace="http://ws.vega-systems.com/LocproTNS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://ws.vega-systems.com/LocproTNS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <wsdl:types>
+      <s:schema targetNamespace="http://ws.vega-systems.com/LocproTNS" elementFormDefault="qualified">
+         <s:element name="WS_WCLIENT_RECH_2">
+            <s:complexType>
+               <s:sequence>
+                  <s:element name="COOKIE_F903KY" minOccurs="1" maxOccurs="1">
+                     <s:simpleType>
+                        <s:restriction base="s:string">
+                           <s:maxLength value="20"/>
+                           <s:minLength value="1"/>
+                        </s:restriction>
+                     </s:simpleType>
+                  </s:element>
+                  <s:element name="Region" minOccurs="0" maxOccurs="1" type="s:string"/>
+                  <s:element name="CritereClient" minOccurs="0" maxOccurs="1" type="tns:CritereClient"/>
+                  <s:element name="Clients" minOccurs="0" maxOccurs="1" type="tns:ArrayOfClient"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="WS_WCLIENT_RECH_2Response">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="WS_WCLIENT_RECH_2Result" type="tns:WS_WCLIENT_RECH_2Result"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="WS_WCLIENT_RECH_2Result">
+            <s:sequence>
+               <s:element name="COOKIE_F903KY" minOccurs="1" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Region" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="CritereClient" minOccurs="0" maxOccurs="1" type="tns:CritereClient"/>
+               <s:element name="Clients" minOccurs="0" maxOccurs="1" type="tns:ArrayOfClient"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="CritereClient">
+            <s:sequence>
+               <s:element name="RaisonSociale" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="80"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="CodeClient" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="NumeroTVAIntracommunautaire" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="Siret" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="14"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Codepostal" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="CommunicationsClients" minOccurs="0" maxOccurs="1" type="tns:ArrayOfCommunicationsClient"/>
+               <s:element name="CodeChantier" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="IsActif" minOccurs="0" maxOccurs="1" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="ArrayOfClient">
+            <s:sequence>
+               <s:element name="Client" minOccurs="0" maxOccurs="unbounded" type="tns:Client"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="Client">
+            <s:sequence>
+               <s:element name="FicheClient" minOccurs="0" maxOccurs="1" type="tns:FicheClient"/>
+               <s:element name="AdresseClient" minOccurs="0" maxOccurs="1" type="tns:AdresseClient"/>
+               <s:element name="CommunicationsClients" minOccurs="0" maxOccurs="1" type="tns:ArrayOfCommunicationsClient"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="FicheClient">
+            <s:sequence>
+               <s:element name="LastModif" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="RaisonSociale" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="80"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="IsActif" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="NumeroTVAIntracommunautaire" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="80"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Siret" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="14"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="CodeClient" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="TypeClient" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="4"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="StatutEconomique" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="Extranet" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="UnikCall" minOccurs="0" maxOccurs="1" type="s:string"/>
+               <s:element name="CodeClientSiren" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="InfoChantier" minOccurs="0" maxOccurs="1" type="tns:InfoChantier"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="AdresseClient">
+            <s:sequence>
+               <s:element name="IdentificationOrganisation" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="80"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="ComplementNom" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="40"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="ComplementAdresse" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="40"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Numero_et_rue" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="40"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="MentionSpeciale" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="40"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Codepostal" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="20"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Localite" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="40"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Pays" minOccurs="0" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="250"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="InfoChantier">
+            <s:sequence>
+               <s:element name="CAFacture" minOccurs="1" maxOccurs="1" type="s:float"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="ArrayOfCommunicationsClient">
+            <s:sequence>
+               <s:element name="CommunicationsClient" minOccurs="0" maxOccurs="unbounded" type="tns:CommunicationsClient"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="CommunicationsClient">
+            <s:sequence>
+               <s:element name="Type" minOccurs="1" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:enumeration value="Personnel"/>
+                        <s:enumeration value="Professionnel"/>
+                        <s:enumeration value="Autre"/>
+                        <s:enumeration value="ContactWeb"/>
+                        <s:enumeration value="Logistique"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Nature" minOccurs="1" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:enumeration value="Téléphone"/>
+                        <s:enumeration value="Fax"/>
+                        <s:enumeration value="Email"/>
+                        <s:enumeration value="Site"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+               <s:element name="Value" minOccurs="1" maxOccurs="1">
+                  <s:simpleType>
+                     <s:restriction base="s:string">
+                        <s:maxLength value="250"/>
+                        <s:minLength value="1"/>
+                     </s:restriction>
+                  </s:simpleType>
+               </s:element>
+            </s:sequence>
+         </s:complexType>
+      </s:schema>
+   </wsdl:types>
+   <wsdl:message name="WS_WCLIENT_RECH_2SoapIn">
+      <wsdl:part name="parameters" element="tns:WS_WCLIENT_RECH_2"/>
+   </wsdl:message>
+   <wsdl:message name="WS_WCLIENT_RECH_2SoapOut">
+      <wsdl:part name="parameters" element="tns:WS_WCLIENT_RECH_2Response"/>
+   </wsdl:message>
+   <wsdl:portType name="LocproPortType">
+      <wsdl:operation name="WS_WCLIENT_RECH_2">
+         <wsdl:documentation>Service Client opération Recherche (v1.2)</wsdl:documentation>
+         <wsdl:input message="tns:WS_WCLIENT_RECH_2SoapIn"/>
+         <wsdl:output message="tns:WS_WCLIENT_RECH_2SoapOut"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="LocproBinding" type="tns:LocproPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="WS_WCLIENT_RECH_2">
+         <soap:operation soapAction="http://ws.vega-systems.com/LocproTNS/WS_WCLIENT_RECH_2" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="LocproService">
+      <wsdl:port name="LocproPort" binding="tns:LocproBinding">
+         <soap:address location="http://frintkil11/locprobin/locpro.dll"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,60 @@
+WS_WCLIENT_RECH_2
+COOKIE_F903KY                       string(20)
+Region                              string
+CritereClient                       CritereClient
+Clients                             ArrayOfClient
+
+
+CritereClient
+RaisonSociale                       string(80) 0-1
+CodeClient                          string(20) 0-1
+NumeroTVAIntracommunautaire         string(14) 0-1
+Codepostal                          string(20) 0-1
+CommunicationsClients               ArrayOfCommunicationsClient 0-1
+CodeChantier                        string(20) 0-1
+IsActif                             string 0-1
+
+
+Client
+FicheClient                         FicheClient
+AdresseClient                       AdresseClient
+CommunicationsClients               ArrayOfCommunicationsClient
+
+FicheClient 
+LastModif                           string
+RaisonSociale                       string(80)
+IsActif                             string
+NumeroTVAIntracommunautaire         string(80)
+Siret                               string(14)
+CodeClient                          string(20)
+TypeClient                          string(4)
+StatutEconomique                    string
+Extranet                            string
+UnikCall                            string
+CodeClientSiren                     string(20)
+InfoChantier                        InfoChantier
+
+
+
+AdresseClient
+IdentificationOrganisation          string(80)
+ComplementNom                       string(40)
+ComplementAdresse                   string(40)
+Numero_et_rue                       string(40)
+MentionSpeciale                     string(40)
+Codepostal                          string(20)
+Localite                           string(40)
+Pays                                string(250)
+
+
+
+InfoChantier
+CAFacture                           float
+
+ArrayOfCommunicationsClient         [CommunicationsClient]
+
+
+CommunicationsClient        
+Type                                enum (Personnel,Professionnel,Autre,ContactWeb,Logistique)
+Nature                              enum (TéléphoneFaxEmailSite)
+Value                               string(250)

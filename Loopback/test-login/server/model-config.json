@@ -14,26 +14,26 @@
     ]
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "kiloutou",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "kiloutou",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "kiloutou",
     "public": false
   },
   "user": {
-    "dataSource": "shop",
+    "dataSource": "kiloutou",
     "public": true
   },
   "product": {
-    "dataSource": "shop",
+    "dataSource": "kiloutou",
     "public": true
   }
 }

@@ -1,0 +1,41 @@
+{
+  "name": "Client",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "ficheClient": {
+      "type": "embedsOne",
+      "model": "FicheClient",
+      "property": "ficheClient",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "adresseClient": {
+      "type": "embedsOne",
+      "model": "AdresseClient",
+      "property": "adresseClient",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "CommunicationsClients": {
+      "type": "embedsMany",
+      "model": "Communicationsclient",
+      "property": "communicationsClients",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

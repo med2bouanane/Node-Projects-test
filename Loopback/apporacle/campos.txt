@@ -1,0 +1,28 @@
+[ [ '189782',                   W2
+    null,                       F050GROUPE
+    0,                          CAFACTURE
+    '189782',                   F050KY
+    null,                       F050TVAI
+    '42329181400022 ',          F050NOMPRE      --> CritClie->siret
+    null,                       F050DIRECT
+    null,                       F050SIGLE
+    'true',                     ISACTIF         --> Client->FicheClient->ISACTIF
+    '2014-05-09T10:00:56Z',     LASTMODIF       --> Client->FicheClient->LASTMODIF
+    'NON DISPONIBLE',           STATUTECO       --> Client->FicheClient->StatutEconomique
+    'false',                    UNIKCALL        --> Client->FicheClient->UNIKCALL
+    '1',                        EXTRANET        --> Client->FicheClient->EXTRANET
+    'E',                        TYPECLIENT      --> Client->FicheClient->TYPECLIENT
+    null,                       TRFNEG
+    null,                       STATUT
+    '334 23',                   F020ADRES1
+    null,                       F020ADRES2
+    null,                       F020ADRES3
+    null,                       F020ADRES4
+    '59000',                    F020CP          --> Client->AddresseClient->Codepostal
+    'LILLE',                    F020VILLE       --> Client->AddresseClient->localite
+    'France',                   PAYS            --> Client->AddresseClient->Pays
+    '42329181400022',           F050CODE        --> CritClie->siret
+    'sdfvdswvgfdv@swfds.com',   TELEPHONE       --> Client->CommunicationsClients->CommunicationsClient->Nature
+    null,                       CARTEFID
+    'O',                        CL_ACTIF
+    null ] ]                    F050CDASTAT

@@ -2,10 +2,10 @@
   "shop": {
     "host": "localhost",
     "port": 27017,
-    "url": "mongodb://localhost:27017/shop",
-    "database": "shop",
+    "url": "mongodb://localhost:27017/kiloutou",
+    "database": "kiloutou",
     "password": "",
-    "name": "shop",
+    "name": "kiloutou",
     "user": "",
     "connector": "mongodb"
   }

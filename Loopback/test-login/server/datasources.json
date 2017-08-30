@@ -3,9 +3,9 @@
     "name": "db",
     "connector": "memory"
   },
-  "shop": {
-    "url": "mongodb://localhost:27017/shop",
-    "name": "shop",
+  "kiloutou": {
+    "url": "mongodb://localhost:27017/kiloutou",
+    "name": "kiloutou",
     "connector": "mongodb"
   }
 }

@@ -1,0 +1,40 @@
+{
+  "name": "WS_WCLIENT_RECH_2",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "COOKIE_F903KY": {
+      "type": "string",
+      "required": true
+    },
+    "Region": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "critereclient": {
+      "type": "embedsOne",
+      "model": "Critereclient",
+      "property": "critereclient",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "Clients": {
+      "type": "embedsMany",
+      "model": "Client",
+      "property": "clients",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

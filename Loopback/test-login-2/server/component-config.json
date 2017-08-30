@@ -1,5 +1,23 @@
 {
   "loopback-component-explorer": {
-    "mountPath": "/explorer"
+    "mountPath": "/explorer",
+    "apiInfo": {
+      "title": "KILPRO-KILOUTOU",
+      "description": "Description of my app APIs.",
+      "termsOfServiceUrl": "http://api.mycompany.io/terms/",
+      "contact": "apiteam@mycompany.io",
+      "license": "Apache 2.0",
+      "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html",
+    "schemes":["https","http"],
+    "securityDefinitions": {
+    "jwt": {
+        "type": "jwt",
+        "authHeaderType": "JWT",
+        "tokenPropertyName": "access_token",
+        "authorizationUrl": "your-authserver-url.com/auth",
+        "description": "Please log in by using your email as an username."
+    }
+    }
+}
   }
 }
