@@ -1,7 +1,7 @@
 {
   "name": "Client",
   "base": "PersistedModel",
-  "idInjection": false,
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
@@ -28,7 +28,7 @@
     },
     "CommunicationsClients": {
       "type": "embedsMany",
-      "model": "Communicationsclient",
+      "model": "CommunicationsClient",
       "property": "communicationsClients",
       "options": {
         "validate": true,

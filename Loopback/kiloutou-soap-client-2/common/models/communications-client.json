@@ -7,14 +7,10 @@
   },
   "properties": {
     "Type": {
-      "type": [
-        "string"
-      ]
+      "type": "string"
     },
     "Nature": {
-      "type": [
-        "string"
-      ]
+      "type": "string"
     },
     "Value": {
       "type": "string"

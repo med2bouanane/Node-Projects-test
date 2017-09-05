@@ -18,14 +18,14 @@
   "relations": {
     "critereclient": {
       "type": "embedsOne",
-      "model": "Critereclient",
+      "model": "CritereClient",
       "property": "critereclient",
       "options": {
         "validate": true,
         "forceId": false
       }
     },
-    "Clients": {
+    "clients": {
       "type": "embedsMany",
       "model": "Client",
       "property": "clients",

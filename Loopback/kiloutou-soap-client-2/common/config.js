@@ -42,6 +42,11 @@ const config = {
         desables = _.difference(methods,methodsEnable) // devuelve los parametros que esten en methods y que no esten en methodsEnable
                                                        // _.difference([1,2],[2,3]) ==> [1]  
         config.desableMethods(model,desables)
+    },
+    db: {
+        user: "DEV",
+        password: "dev",
+        connectString: "FRKILPRO7002:2115/LOCD"
     }            
 }
 

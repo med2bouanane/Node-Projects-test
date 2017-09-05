@@ -23,6 +23,9 @@
     },
     "IsActif": {
       "type": "string"
+    },
+    "Siret": {
+      "type": "string"
     }
   },
   "validations": [],
