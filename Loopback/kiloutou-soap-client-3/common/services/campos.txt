@@ -1,0 +1,28 @@
+[ [ '189782',                   W2
+    null,                       F050GROUPE
+    0,                          CAFACTURE       --> Clients.Client.FicheClient.InfoChantier.CAFacture (2)
+    '189782',                   F050KY          --> Clients.Client.FicheClient.CodeClient (3)
+    null,                       F050TVAI        --> Clients.Client.FicheClient.NumeroTVAIntracommunautaire (4)
+    '42329181400022 ',          F050NOMPRE      --> CritClie->siret (5)
+    null,                       F050DIRECT
+    null,                       F050SIGLE
+    'true',                     ISACTIF         --> Client->FicheClient->ISACTIF (8)
+    '2014-05-09T10:00:56Z',     LASTMODIF       --> Client->FicheClient->LASTMODIF (9)
+    'NON DISPONIBLE',           STATUTECO       --> Client->FicheClient->StatutEconomique (10)
+    'false',                    UNIKCALL        --> Client->FicheClient->UNIKCALL (11)
+    '1',                        EXTRANET        --> Client->FicheClient->EXTRANET (12)
+    'E',                        TYPECLIENT      --> Client->FicheClient->TYPECLIENT (13)
+    null,                       TRFNEG
+    null,                       STATUT          --> Clients.Client.FicheClient.StatutEconomique (15)
+    '334 23',                   F020ADRES1      --> Clients.Client.AdresseClient.Numero_et_rue (16)
+    null,                       F020ADRES2      --> Clients.Client.AdresseClient.MentionSpeciale (17)
+    null,                       F020ADRES3      --> Clients.Client.AdresseClient.ComplementAdresse (18)
+    null,                       F020ADRES4      --> Clients.Client.AdresseClient.ComplementNom (19)
+    '59000',                    F020CP          --> Client->AddresseClient->Codepostal (20)
+    'LILLE',                    F020VILLE       --> Client->AddresseClient->localite (21)
+    'France',                   PAYS            --> Client->AddresseClient->Pays (22)
+    '42329181400022',           F050CODE        --> CritClie->siret (23)
+    'sdfvdswvgfdv@swfds.com',   TELEPHONE       --> Client->CommunicationsClients->CommunicationsClient->Nature (24)
+    null,                       CARTEFID
+    'O',                        CL_ACTIF
+    null ] ]                    F050CDASTAT

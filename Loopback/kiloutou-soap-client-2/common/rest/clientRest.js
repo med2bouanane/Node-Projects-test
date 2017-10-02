@@ -1,5 +1,5 @@
 
-const rech2 = require('./rech2')
+const rech2 = require('./rech2Rxjs')
 let clientRest={
     //************ */
     // POST wswclientrech2

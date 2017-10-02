@@ -1,6 +1,6 @@
 
 const clientService = require('../services/clientService'),
-        Response = require('../services/response')
+        Response = require('../services/responseRxjs')
 
 let rech2 = {
 

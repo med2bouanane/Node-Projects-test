@@ -1,0 +1,23 @@
+{
+  "name": "CommunicationsClient",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Type": {
+      "type": "string"
+    },
+    "Nature": {
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

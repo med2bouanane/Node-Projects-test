@@ -1,0 +1,45 @@
+{
+  "name": "CritereClient",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "RaisonSociale": {
+      "type": "string"
+    },
+    "CodeClient": {
+      "type": "string"
+    },
+    "NumeroTVAIntracommunautaire": {
+      "type": "string"
+    },
+    "Codepostal": {
+      "type": "string"
+    },
+    "CodeChantier": {
+      "type": "string"
+    },
+    "IsActif": {
+      "type": "string"
+    },
+    "Siret": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "CommunicationsClients": {
+      "type": "embedsMany",
+      "model": "Communicationsclient",
+      "property": "communicationsClients",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

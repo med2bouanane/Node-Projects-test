@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "CommunicationsClient": {
+    "dataSource": "db",
+    "public": false
+  },
+  "InfoChantier": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AdresseClient": {
+    "dataSource": "db",
+    "public": false
+  },
+  "FicheClient": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Client": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CritereClient": {
+    "dataSource": "db",
+    "public": false
+  },
+  "WS_WCLIENT_RECH_2": {
+    "dataSource": "db",
+    "public": true
+  }
+}

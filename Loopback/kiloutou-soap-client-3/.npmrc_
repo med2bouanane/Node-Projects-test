@@ -1,0 +1,7 @@
+strict-ssl=false
+registry=http://frindusdev01.kiloutou.ent.root:8081/repository/npm-group/
+#http_proxy=http://mbouanane:Kiloutou2017@webdefence.global.blackspider.com:8081
+#https_proxy=http://mbouanane:Kiloutou2017@webdefence.global.blackspider.com:8081
+no_proxy=frindusdev01.kiloutou.ent.root
+always-auth=true
+_auth="YWRtaW46YWRtaW4xMjM="
