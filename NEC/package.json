@@ -1,0 +1,32 @@
+{
+  "name": "poc-middleware",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "posttest": "npm run lint",
+    "test": "nyc --reporter=html mocha --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "restify": "^7.2.1",
+    "swagger-ui-express": "^3.0.10",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.18.3"
+  }
+}
