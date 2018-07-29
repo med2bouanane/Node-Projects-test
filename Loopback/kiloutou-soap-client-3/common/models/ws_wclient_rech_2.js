@@ -10,7 +10,7 @@ const oracledb = require('oracledb'),
  */
 
 /**
- * The definition type of the Wswclientrech2 Model is defined in {@link ws_wclient_rech_2.json} file
+ * The definition type of the Wswclientrech2 Model is defined in {@link ./ws_wclient_rech_2.json} file
  * @param  {Wswclientrech2} Wswclientrech2 - Wswclientrech2 model
  */        
 module.exports = function(Wswclientrech2) {
