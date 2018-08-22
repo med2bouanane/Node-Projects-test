@@ -1,0 +1,202 @@
+swagger: "2.0"
+info:
+  description: "Kiloutou NAK."
+  version: "1.0.0"
+  title: "Swagger NAK"
+host: "localhost:3000"
+basePath: "/api/v1"
+tags:
+- name: "contact"
+  description: "Operations about contact"
+schemes:
+- "http"
+- "https"
+paths:
+  /contact:
+    put:
+      tags:
+      - "contact"
+      summary: "PUT contact"
+      description: "PUT contact."
+      operationId: "updateContact"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+        - name: "access_token"
+          in: "header"
+          required: true
+          type: "string"
+        - name: "contact"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/contact"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/contact"
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+  /contacts/{contactId}:  
+    get:
+      tags:
+      - "contact"
+      summary: "GET contact"
+      description: "GET contact."
+      operationId: "getContactById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+        - name: "contactId"
+          in: "path"
+          description: "ID of contact to return"
+          required: true
+          type: "integer"
+          format: "int64"
+        - name: "access_token"
+          in: "header"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/contact"
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+securityDefinitions:
+  access_token:
+    type: "apiKey"
+    in: "header"
+    name: "access_token"
+    description: "All requests must include the access_token header"
+security:
+  - access_token: []
+parameters:
+  token:
+    in: "header"
+    name: "access_token"
+    description: "The token, All requests must include the access_token header"
+    required: false
+    schema:
+      $ref: "#/definitions/Token"
+  token_req:
+    in: "header"
+    name: "access_token"
+    description: "The token, All requests must include the access_token header"
+    required: true
+    schema:
+      $ref: "#/definitions/Token"
+  # token_description:
+  #   description: "The token, All requests must include the access_token header, Use the Authorize Buttone"
+definitions:
+  address:
+    required:
+      - destinationName
+      - streetNumber
+      - zipCode
+      - city
+      - country
+    properties:
+      destinationName:
+        description: Name or Social reason
+        type: string
+      nameComplement:
+        description: Name supplement (address service)
+        type: string
+      addressComplement:
+        description: 'The delivery area (building, industrial zone, building entrance, ...)'
+        type: string
+      streetNumber:
+        description: 'The Number and the name of the street'
+        type: string
+      specialMention:
+        description: 'The zip code, CEDEX, TLA, etc ...'
+        type: string
+      zipCode:
+        description: The zip code
+        type: string
+      city:
+        description: the city
+        type: string
+      country:
+        description: The country of this customer
+        type: string
+  communicationChannel:
+    required:
+      - type
+      - nature
+      - value
+    properties:
+      type:
+        description: 'Type of channel, Personal or Professional'
+        type: string
+      nature:
+        description: 'Nature of channel,'
+        type: string
+      value:
+        description: Communication channel value
+        type: string
+  customer-reference-response:
+    required:
+      - wellFormed
+      - valid
+    properties:
+      wellFormed:
+        description: Indicates if the customer reference is valid
+        type: boolean
+      valid:
+        description: Indicates id the customer reference is wellformed
+        type: boolean
+  contact:
+    required:
+      - contactId
+      - civility
+      - firstName
+      - lastName
+      - customerId
+      - contactType
+    properties:
+      lastModificationDate:
+        description: Last Mofication Date of the contact
+        format: date-time
+        type: string
+      contactId:
+        description: Contact uniq identifier
+        type: string
+      contactType:
+        description: Contact Type
+        type: string
+      civility:
+        description: Contact civility
+        type: string
+      firstName:
+        description: Contact first name
+        type: string
+      lastName:
+        description: Contact last name
+        type: string
+      position:
+        description: Contact company position
+        type: string
+      address:
+        $ref: '#/definitions/address'
+      communicationChannels:
+        description: Contact communications channels
+        items:
+          $ref: '#/definitions/communicationChannel'
+        type: array
+      customerId:
+        description: Customer uniq ID who the contact belong to
+        type: string
+      customerName:
+        description: Customer name or organization name who the contact belong to
+        type: string
+  

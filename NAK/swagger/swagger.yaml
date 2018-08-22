@@ -1,0 +1,143 @@
+swagger: "2.0"
+info:
+  description: "Kiloutou NEC."
+  version: "1.0.0"
+  title: "Swagger NEC"
+host: "localhost:3000"
+basePath: "/api/v1"
+tags:
+- name: "token"
+  description: "Send the token"
+- name: "users"
+  description: "Operations about user"
+schemes:
+- "http"
+- "https"
+paths:
+  /token:
+    post:
+      tags:
+      - "token"
+      summary: "Send the token"
+      description: "Send the token"
+      operationId: "token"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - $ref: "#/parameters/token_req"
+      responses:
+        405:
+          description: "Invalid input"
+      # security:
+      # - access_token:
+      #   - "write:token"
+      #   - "read:token"
+  /users/{username}:
+    get:
+      tags:
+      - "users"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "getUserByName"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - $ref: "#/parameters/token"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+  /users:  
+    get:
+      tags:
+      - "users"
+      summary: "GET users"
+      description: "GET users."
+      operationId: "getUsers"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+        - $ref: "#/parameters/token"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+securityDefinitions:
+  access_token:
+    type: "apiKey"
+    in: "header"
+    name: "kl_token"
+    description: "All requests must include the kl_token header"
+security:
+  - access_token: []
+parameters:
+  token:
+    in: "header"
+    name: "kl_token"
+    description: "The token, All requests must include the kl_token header"
+    required: false
+    schema:
+      $ref: "#/definitions/Token"
+  token_req:
+    in: "header"
+    name: "kl_token"
+    description: "The token, All requests must include the kl_token header"
+    required: true
+    schema:
+      $ref: "#/definitions/Token"
+  # token_description:
+  #   description: "The token, All requests must include the kl_token header, Use the Authorize Buttone"
+definitions:
+  User:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      phone:
+        type: "string"
+      active:
+        type: "boolean"
+        description: "User Status"
+      address:
+        type: "string"
+    xml:
+      name: "User"
+  Token:
+    type: "object"
+    required:
+    - "token"
+    properties:
+      token:
+        type: "string"
+        example: "yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw"
+    xml:
+      name: "Token"

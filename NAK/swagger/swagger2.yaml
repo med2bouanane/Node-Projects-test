@@ -1,0 +1,199 @@
+swagger: "2.0"
+info:
+  description: "Kiloutou NAK."
+  version: "1.0.0"
+  title: "Swagger NAK"
+host: "localhost:3000"
+basePath: "/api/v1"
+tags:
+- name: "contact"
+  description: "Operations about contact"
+schemes:
+- "http"
+- "https"
+paths:
+  /me:  
+    get:
+      tags:
+      - "contact"
+      summary: "GET contact"
+      description: "GET contact."
+      operationId: "getContact"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+        - name: "access_token"
+          in: "header"
+          required: true
+          type: "string"
+        - name: "id_token"
+          in: "header"
+          required: false
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/contact"
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+    put:
+      tags:
+      - "contact"
+      summary: "PUT contact"
+      description: "PUT contact."
+      operationId: "updateContact"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+        - name: "access_token"
+          in: "header"
+          required: true
+          type: "string"
+        - name: "contact"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/contact"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/contact"
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+securityDefinitions:
+  access_token:
+    type: "apiKey"
+    in: "header"
+    name: "access_token"
+    description: "All requests must include the access_token header"
+security:
+  - access_token: []
+parameters:
+  token:
+    in: "header"
+    name: "access_token"
+    description: "The token, All requests must include the access_token header"
+    required: false
+    schema:
+      $ref: "#/definitions/Token"
+  token_req:
+    in: "header"
+    name: "access_token"
+    description: "The token, All requests must include the access_token header"
+    required: true
+    schema:
+      $ref: "#/definitions/Token"
+  # token_description:
+  #   description: "The token, All requests must include the access_token header, Use the Authorize Buttone"
+definitions:
+  address:
+    required:
+      - destinationName
+      - streetNumber
+      - zipCode
+      - city
+      - country
+    properties:
+      destinationName:
+        description: Nom ou raison sociale
+        type: string
+      nameComplement:
+        description: Complément de nom (service adresse)
+        type: string
+      addressComplement:
+        description: 'La zone de livraison (batiment, zone industrielle, entrée d''immeuble,...)'
+        type: string
+      streetNumber:
+        description: 'Le numéro ainsi que le nom de la rue, allée, avenue, etc...'
+        type: string
+      specialMention:
+        description: 'La boite postale, CEDEX, TLA, etc...'
+        type: string
+      zipCode:
+        description: Le code postale
+        type: string
+      city:
+        description: La ville
+        type: string
+      country:
+        description: Le pays of this customer
+        type: string
+  communicationChannel:
+    required:
+      - type
+      - nature
+      - value
+    properties:
+      type:
+        description: 'Type of channel, Personal or Professional'
+        type: string
+      nature:
+        description: 'Nature of channel,'
+        type: string
+      value:
+        description: Communication channel value
+        type: string
+  customer-reference-response:
+    required:
+      - wellFormed
+      - valid
+    properties:
+      wellFormed:
+        description: Indicates if the customer reference is valid
+        type: boolean
+      valid:
+        description: Indicates id the customer reference is wellformed
+        type: boolean
+  contact:
+    required:
+      - contactId
+      - civility
+      - firstName
+      - lastName
+      - customerId
+      - contactType
+    properties:
+      lastModificationDate:
+        description: Last Mofication Date of the contact
+        format: date-time
+        type: string
+      contactId:
+        description: Contact uniq identifier
+        type: string
+      contactType:
+        description: Contact Type
+        type: string
+      civility:
+        description: Contact civility
+        type: string
+      firstName:
+        description: Contact first name
+        type: string
+      lastName:
+        description: Contact last name
+        type: string
+      position:
+        description: Contact company position
+        type: string
+      address:
+        $ref: '#/definitions/address'
+      communicationChannels:
+        description: Contact communications channels
+        items:
+          $ref: '#/definitions/communicationChannel'
+        type: array
+      customerId:
+        description: Customer uniq ID who the contact belong to
+        type: string
+      customerName:
+        description: Customer name or organization name who the contact belong to
+        type: string
+  
